@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-// import "./index.css";
-// import App from "./App";
+import "./index.css";
+import App from "./App";
 import StarRating from "./StarRating";
 
 function Test() {
@@ -17,11 +17,12 @@ function Test() {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <StarRating
+    {/* <StarRating
       maxRating={5}
       messages={["terrible", "bad", "okay", "good", "amazing"]}
     />
     <StarRating size={96} color="red" defaultRating={3} />
-    <Test />
+    <Test /> */}
+    <App />
   </React.StrictMode>
 );
