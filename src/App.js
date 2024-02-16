@@ -199,8 +199,18 @@ function Search({ query, setQuery }) {
   const inputElement = useRef(null);
 
   useEffect(function () {
+    function callback(e) {
+      if (document.activeElement === inputElement.current) return;
+      if (e.code === "Enter") inputElement.current.focus();
+      setQuery("");
+    }
+
+    document.addEventListener("keydown", callback);
     inputElement.current.focus();
+
+    return () => document.removeEventListener("keydown", callback);
   }, []);
+
   return (
     <input
       className="search"
